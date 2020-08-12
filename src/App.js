@@ -28,7 +28,7 @@ class App extends React.Component {
         <h1>Pizzas:</h1>
         {
           this.state.pizzas.map((pizza) => {
-            return <div>
+            return <div key={pizza.name}>
             <h1>{pizza.name}</h1>
             <h2>{pizza.ingredients}</h2>
             <h2>${pizza.price}</h2>
