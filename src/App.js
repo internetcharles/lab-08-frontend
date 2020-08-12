@@ -24,6 +24,8 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
+        <div className="container">
+          <div className="text-box">
         <h1>Bongo's Pizza Repository</h1>
         <h1>Pizzas:</h1>
         {
@@ -35,6 +37,8 @@ class App extends React.Component {
             </div>
           })
         }
+        </div>
+        </div>
       </div>
     )
   }

@@ -1,16 +1,27 @@
-.App {
+@import url('https://fonts.googleapis.com/css2?family=Antic+Slab&family=Mulish:ital,wght@0,400;1,300&display=swap');
+
+html {
   text-align: center;
+  background-color: black;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+h1 {
+  font-family: 'Antic Slab', serif;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+h2 {
+  font-family: 'Mulish', sans-serif;
+}
+
+.container {
+  background-color: lightgray;
+  margin-left: 30%;
+  margin-right: 30%;
+  height: 75em;
+}
+
+.text-box {
+  padding-top: 50px;
 }
 
 .App-header {
