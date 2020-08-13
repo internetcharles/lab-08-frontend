@@ -2,7 +2,7 @@
 
 html {
   text-align: center;
-  background-color: black;
+  background-color: white;
 }
 
 h1 {
@@ -17,7 +17,7 @@ h2 {
   background-color: lightgray;
   margin-left: 30%;
   margin-right: 30%;
-  height: 75em;
+  height: 100vh;
 }
 
 .text-box {

@@ -1,47 +1,42 @@
-import React from 'react';
-import { fetchPizzas } from './pizza-api.js';
-import './App.css';
+import React, { Component } from 'react'
+import {
+    BrowserRouter as Router, 
+    Route, 
+    Switch,
+    Link,
+} from 'react-router-dom';
+import ListPage from './ListPage.js';
+import FormPage from './FormPage';
+import DetailPage from './DetailPage';
 
-
-
-class App extends React.Component {
-
-  state = {
-    pizzas: []
-  }
-  
-  
-  componentDidMount = async () => {
-    const data = await fetchPizzas()
-  
-    this.setState({
-      pizzas: data.body
-    })
-    console.log(this.state.pizzas);
-  }
-
-
-  render() {
-    return (
-      <div className="App">
-        <div className="container">
-          <div className="text-box">
-        <h1>Bongo's Pizza Repository</h1>
-        <h1>Pizzas:</h1>
-        {
-          this.state.pizzas.map((pizza) => {
-            return <div key={pizza.name}>
-            <h1>{pizza.name}</h1>
-            <h2>{pizza.ingredients}</h2>
-            <h2>${pizza.price}</h2>
+export default class App extends Component {
+    render() {
+        return (
+            <div>
+                <Router>
+                    <div className="sidebar">
+                        <Link to='/create'>Create Pizza</Link>
+                        <Link to='/'>List</Link>
+                    </div>
+                    <Switch>
+                        <Route 
+                            path="/" 
+                            exact
+                            render={(routerProps) => <ListPage {...routerProps} />} 
+                        />
+                        <Route 
+                            path="/create" 
+                            exact
+                            render={(routerProps) => <FormPage {...routerProps} />} 
+                        />
+                        <Route 
+                            path="/detail/:id" 
+                            exact
+                            render={(routerProps) => <DetailPage {...routerProps} />} 
+                        />
+                    </Switch>
+                </Router>
             </div>
-          })
-        }
-        </div>
-        </div>
-      </div>
-    )
-  }
+        )
+    }
 }
-
-export default App;

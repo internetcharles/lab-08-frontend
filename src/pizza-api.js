@@ -9,3 +9,7 @@ export function fetchPizzas() {
 export function fetchPizza(id) {
     return request.get(`${URL}/pizzas/${id}`)
 }
+
+export function createPizza(pizzaData) {
+    return request.post(`${URL}/pizzas`, pizzaData)
+}
