@@ -12,11 +12,12 @@ import DetailPage from './DetailPage';
 export default class App extends Component {
     render() {
         return (
-            <div>
+            <div className="whole-page">
                 <Router>
                     <div className="sidebar">
-                        <Link to='/create'>Create Pizza</Link>
-                        <Link to='/'>List</Link>
+                        <li><Link to='/create'>Create Pizza</Link></li>
+                        <br></br>
+                        <li><Link to='/'>List</Link></li>
                     </div>
                     <Switch>
                         <Route 

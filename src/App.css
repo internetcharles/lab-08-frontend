@@ -17,16 +17,16 @@ h2 {
   background-color: lightgray;
   margin-left: 30%;
   margin-right: 30%;
-  height: 100vh;
+  margin-top: 0;
+  margin-bottom: 0;
 }
 
 .text-box {
-  padding-top: 50px;
+  padding-top: 5px;
 }
 
 .App-header {
   background-color: #282c34;
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -46,4 +46,37 @@ h2 {
   to {
     transform: rotate(360deg);
   }
+}
+
+a {
+  color: black;
+  text-decoration: none;
+}
+
+.sidebar {
+  font-family: 'Mulish', sans-serif;
+  float: left;
+  padding: 1em;
+  color: grey;
+  height: 100vh;
+  margin-top: 20vh;
+  padding-left: 3em;
+}
+
+.my-form {
+  margin-top: 40px;
+}
+
+.whole-page {
+    grid-template-columns: 40px 50px auto 50px 40px;
+    grid-template-rows: 25% 100px auto;
+}
+
+.ingredients-box {
+  background-color: lightgray;
+  margin-left: 30%;
+  margin-right: 30%;
+  height: 100vh;
+  font-family: 'Antic Slab', serif;
+  font-size: 40px;
 }

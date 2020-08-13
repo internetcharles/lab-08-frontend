@@ -55,16 +55,21 @@ export default class FormPage extends Component {
 
     render() {
         return (
-            <div>
+            <div className="my-form">
                 <form>
                 <input onChange={this.handlePizzaChange} placeholder="Pizza Name"></input>
+                <br />
                 <input onChange={this.handleIngredientsChange} placeholder="Ingredients"></input>
+                <br />
                 <select onChange={this.handleMealChange}>
                     <option value="Breakfast">Breakfast</option>
                     <option value="Lunch">Lunch</option>
                     <option value="Dinner">Dinner</option>
                 </select>
+                <br />
                 <input onChange={this.handlePriceChange} placeholder="Price"></input>
+                <br />
+                <div>Is delicious?</div>
                 <select onChange={this.handleDeliciousChange}>
                     <option value={true}>True</option>
                     <option value={false}>False</option>
