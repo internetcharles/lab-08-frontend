@@ -7,7 +7,8 @@ export default class FormPage extends Component {
         ingredients: '',
         meal: 'Breakfast',
         price: 0,
-        delicious: true
+        delicious: true,
+        origin: []
     }
 
     handleMealChange = (e) => {

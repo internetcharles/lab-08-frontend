@@ -31,7 +31,7 @@ export default class App extends Component {
                             render={(routerProps) => <FormPage {...routerProps} />} 
                         />
                         <Route 
-                            path="/detail/:id" 
+                            path="/pizzas/:id" 
                             exact
                             render={(routerProps) => <DetailPage {...routerProps} />} 
                         />

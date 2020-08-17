@@ -30,7 +30,7 @@ class ListPage extends React.Component {
         <h1>Pizzas:</h1>
         {
           this.state.pizzas.map((pizza) => {
-            return <Link className="pizza" to={`/detail/${pizza.id}`} key={`${pizza.id}`}>
+            return <Link className="pizza" to={`/pizzas/${pizza.id}`} key={`${pizza.id}`}>
             <div key={pizza.name}>
             <h1>{pizza.name}</h1>
             <h2>{pizza.ingredients}</h2>
