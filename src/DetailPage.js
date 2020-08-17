@@ -109,9 +109,9 @@ export default class DetailPage extends Component {
 
                 <p>UPDATE THIS PIZZA?</p>
                 <form onSubmit={this.handleSubmit}>
-                    <p>Name:<input onChange={this.handleNameChange}></input></p>
-                    <p>Ingredients:<input onChange={this.handleIngredientsChange}></input></p>
-                    <p>Meal:<select onChange={this.handleMealChange}>
+                    <p>Name:<input onChange={this.handleNameChange} placeholder={this.state.name}></input></p>
+                    <p>Ingredients:<input onChange={this.handleIngredientsChange} placeholder={this.state.ingredients}></input></p>
+                    <p>Meal:<select onChange={this.handleMealChange} value={this.state.meal}>
                             <option value='breakfast'>Breakfast</option>
                             <option value='lunch'>Lunch</option>
                             <option value='dinner'>Dinner</option>
@@ -123,9 +123,9 @@ export default class DetailPage extends Component {
                     }
                         </select>
                     </p>
-                    <p>Price:<input type="number" onChange={this.handlePriceChange} value={this.state.price}></input></p>
+                    <p>Price:<input type="number" onChange={this.handlePriceChange} placeholder={this.state.price} value={this.state.price}></input></p>
                     <p>Delicious:
-                        <select onChange={this.handleSelectChange} value={this.state.delicious}>
+                        <select onChange={this.handleSelectChange} value={this.state.delicious} selected={this.state.delicious}>
                             <option value={true}>true</option>
                             <option value={false}>false</option>
                         </select>
