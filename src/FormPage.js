@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { createPizza } from './pizza-api.js';
+import { createPizza, fetchOrigin } from './pizza-api.js';
 
 export default class FormPage extends Component {
     state = {
@@ -8,7 +8,16 @@ export default class FormPage extends Component {
         meal: 'Breakfast',
         price: 0,
         delicious: true,
-        origin: []
+        origin_id: 1,
+        origins: []
+    }
+
+    componentDidMount = async () => {
+        const originData = await fetchOrigin();
+
+        this.setState({
+            origins: originData.body
+        })
     }
 
     handleMealChange = (e) => {
@@ -40,6 +49,12 @@ export default class FormPage extends Component {
             price: e.target.value
         })
     }
+    
+    handleOriginChange = (e) => {
+        this.setState({
+            origin_id: e.target.value
+        })
+    }
 
     handleSubmit = async (e) => {
         e.preventDefault();
@@ -49,8 +64,11 @@ export default class FormPage extends Component {
             ingredients: this.state.ingredients,
             meal: this.state.meal,
             price: this.state.price,
-            delicious: this.state.delicious
+            delicious: this.state.delicious,
+            origin_id: this.state.origin_id
         });
+
+        this.props.history.push('/');
 
     }
 
@@ -74,6 +92,12 @@ export default class FormPage extends Component {
                 <select onChange={this.handleDeliciousChange}>
                     <option value={true}>True</option>
                     <option value={false}>False</option>
+                </select>
+                <p>Origin:</p>
+                <select onChange={this.handleOriginChange}>
+                    {
+                        this.state.origins.map(orig => <option value={orig.id}>{orig.origin}</option>)
+                    }
                 </select>
                 <p>
                     <button onClick={this.handleSubmit}>SUBMIT</button>
